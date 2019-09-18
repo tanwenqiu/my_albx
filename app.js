@@ -1,0 +1,19 @@
+//搭建服务器
+const express = require("express");
+const router = require("./router.js");
+
+const app = express();
+app.listen(4444, () => {
+  console.log("http://127.0.0.1:4444");
+});
+
+// 配置body-parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// //配置ejs
+app.set("view engine", "ejs");
+app.set("views", "views");
+
+// //使用路由
+app.use(router);
