@@ -23,10 +23,12 @@ module.exports = {
         // 判断有没有查询到数据
         if (data) {
           // 说明查询到数据
-        //   console.log(data);
+          //   console.log(data);
           // 再进行密码是否匹配的判断
           if (data.password == obj.password) {
             // 说明密码匹配,登陆成功
+            // 通过session来实现登陆状态的保持
+            req.session.isLogin = "true";
             res.json({
               code: 200,
               msg: "登陆成功"

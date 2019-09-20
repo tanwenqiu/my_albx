@@ -29,5 +29,7 @@ router.get('/',pagesController.getIndexPage)
 
       //下面的路由是业务处理
       .post('/login',usersController.login)
+      
+      
 // 暴露
 module.exports = router;
